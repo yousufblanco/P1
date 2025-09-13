@@ -109,5 +109,11 @@ client.on('messageCreate', async (message) => {
     message.channel.send(report);
   }
 });
-
 client.login(process.env.DISCORD_TOKEN);
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => res.send('Bot is running!'));
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
